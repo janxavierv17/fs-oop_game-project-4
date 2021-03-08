@@ -1,0 +1,5 @@
+class Phrase {
+    constructor() {
+
+    }
+}
