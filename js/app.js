@@ -1,7 +1,10 @@
+const startButton = document.querySelector("#btn__reset")
 const logPhrase = (phrase) => {
     console.log(`Phrase - phrase:`, phrase.phrase)
 }
 
-const game = new Game();
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase} `)
+let game
+startButton.addEventListener("click", () => {
+    game = new Game();
+    game.startGame();
+})
