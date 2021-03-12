@@ -20,4 +20,25 @@ class Phrase {
         }
         phraseUl.innerHTML = liContent;
     }
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        return this.phrase.includes(letter.textContent) ? true : false;
+    };
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        let phraseUl = document.querySelector("#phrase").firstElementChild
+        let hiddenLetters = phraseUl.querySelectorAll(".hide")
+        hiddenLetters.forEach(hiddenLetter => {
+            if (hiddenLetter.textContent === letter) {
+                hiddenLetter.classList.replace("hide", "show");
+                hiddenLetter.classList.add("magnify")
+            }
+        })
+    };
 }
