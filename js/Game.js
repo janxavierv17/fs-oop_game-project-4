@@ -10,6 +10,31 @@ class Game {
         this.activePhrase = null;
     }
 
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+    handleInteraction(chosenLetter) {
+        // A button element gets disabled once a user "clicks"
+        chosenLetter.disabled = true;
+        // Checks the chosen letter if it exists in the board
+        let letter = this.activePhrase.checkLetter(chosenLetter)
+
+        // This if statement will check if the chosen letter from the onscreen keyboard exist.
+        if (!letter) {
+            chosenLetter.classList.add("chosen");
+            this.removeLife();
+        } else {
+            chosenLetter.classList.add("choses")
+            this.activePhrase.showMatchedLetter(chosenLetter.textContent);
+            let win = this.checkForWin();
+
+            if (win) {
+                this.gameOver("Great job! You win.", "win")
+            }
+        }
+    };
+
 
     /**
     * Creates phrases for use in game
