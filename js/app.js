@@ -1,13 +1,7 @@
-
-// const logPhrase = (phrase) => {
-//     console.log(`Phrase - phrase: `, phrase.phrase, "length", phrase.phrase.length);
-// };
-// logPhrase(game.getRandomPhrase());
-// game.getRandomPhrase().addPhraseToDisplay();
-
-// game.startGame();
-// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
-
+/**
+ * An event handler for button was assign with a click event.
+ * This event handler will create new object of game and phrase.
+ */
 let game
 let startButton = document.querySelector("#btn__reset")
 startButton.addEventListener("click", () => {
@@ -15,6 +9,11 @@ startButton.addEventListener("click", () => {
     game.startGame();
 })
 
+/**
+ * I assigned a event listener for a collection of buttons.
+ * It will handle user interaction where their chosen letter the onscreen keyboard,
+ * will get matched with the phrase on the board.
+ */
 let onScreenKeyboard = document.querySelectorAll('#qwerty button');
 onScreenKeyboard.forEach(keyChar => {
     keyChar.addEventListener("click", e => {
