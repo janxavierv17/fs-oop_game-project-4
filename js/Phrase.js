@@ -9,7 +9,6 @@ class Phrase {
     addPhraseToDisplay() {
         let phraseUl = document.querySelector("#phrase").firstElementChild;
         let phraseToArray = this.phrase.split("")
-        console.log(phraseToArray)
         let liContent = ""
         for (let i = 0; i < phraseToArray.length; i++) {
             if (phraseToArray[i] === " ") {

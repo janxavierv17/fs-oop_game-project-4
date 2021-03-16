@@ -22,10 +22,10 @@ class Game {
 
         // This if statement will check if the chosen letter from the onscreen keyboard exist.
         if (!letter) {
-            chosenLetter.classList.add("chosen");
+            chosenLetter.classList.add("wrong");
             this.removeLife();
         } else {
-            chosenLetter.classList.add("choses")
+            chosenLetter.classList.add("chosen")
             this.activePhrase.showMatchedLetter(chosenLetter.textContent);
             let win = this.checkForWin();
 
